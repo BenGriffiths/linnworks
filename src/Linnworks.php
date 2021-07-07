@@ -8,6 +8,7 @@ use Booni3\Linnworks\Api\Orders;
 use Booni3\Linnworks\Api\PostalServices;
 use Booni3\Linnworks\Api\ReturnsRefunds;
 use Booni3\Linnworks\Api\Stock;
+use Booni3\Linnworks\Api\Inventory;
 use Booni3\Linnworks\Exceptions\LinnworksAuthenticationException;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -92,6 +93,11 @@ class Linnworks
     public function stock(): Stock
     {
         return new Stock($this->client, $this->server, $this->bearer);
+    }
+
+    public function inventory(): Stock
+    {
+        return new Inventory($this->client, $this->server, $this->bearer);
     }
 
 }
