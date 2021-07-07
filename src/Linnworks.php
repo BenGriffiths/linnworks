@@ -95,7 +95,7 @@ class Linnworks
         return new Stock($this->client, $this->server, $this->bearer);
     }
 
-    public function inventory(): Stock
+    public function inventory(): Inventory
     {
         return new Inventory($this->client, $this->server, $this->bearer);
     }
